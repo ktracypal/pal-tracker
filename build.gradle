@@ -15,4 +15,23 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter:2.2.2.RELEASE'
     implementation 'org.springframework:spring-web:5.2.2.RELEASE'
     implementation 'org.springframework:spring-webmvc:5.2.2.RELEASE'
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage',module: 'junit-vintage-engine'
+    }
 }
+
+bootRun.environment([
+    "WELCOME_MESSAGE": "hello",
+])
+
+test.environment([
+    "WELCOME_MESSAGE": "Hello from test",
+])
+
+
+
+test  {
+    useJUnitPlatform()
+}
+
