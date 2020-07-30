@@ -3,7 +3,7 @@ package io.pivotal.pal.tracker;
 import java.sql.Time;
 import java.util.*;
 
-public class InMemoryTimeEntryRepository extends TimeEntryRepository {
+public class InMemoryTimeEntryRepository implements TimeEntryRepository {
     Map<Long,TimeEntry> memory = new HashMap<>();
     private long id = 1L;
 
